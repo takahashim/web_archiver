@@ -2,6 +2,16 @@
 
 Web Contents Archiver for Rails.
 
+## Feature
+
+It's like `wget --mirror`, but there are some features:
+
+* save contents such as `http://example.jp/foo` into `DOCUMENT_ROOT/foo/index.html`
+
+## TODO
+
+* resolve relative links
+
 ## Installation
 
 Add this line to your application's Gemfile:
