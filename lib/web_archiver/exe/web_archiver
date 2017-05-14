@@ -1,0 +1,10 @@
+if ARGV.count < 2
+  $stderr.puts "Usage: #{$0} URL DIR"
+  exit 1
+end
+
+
+url = ARGV.shift
+root_dir = ARGV.shift
+arc = Archive.new(URI.parse(url), root_dir)
+arc.archive

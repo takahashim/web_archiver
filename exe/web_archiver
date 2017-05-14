@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require 'web_archiver'
+
+if ARGV.count < 2
+  $stderr.puts "Usage: #{$0} URL DIR"
+  exit 1
+end
+
+url = ARGV.shift
+root_dir = ARGV.shift
+
+doc = WebArchiver::Document.new(URI.parse(url))
+arc = WebArchiver::Archiver.new(root_dir, doc.path)
+arc.archive(doc)
