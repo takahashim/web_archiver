@@ -113,6 +113,7 @@ module WebArchiver
         if File.extname(target_uri.path) == ".css"
           data.scan(/url\((.*)\)/) do |matched|
             matched.each do |url_in_css|
+              url_in_css.gsub!(/"/, '')
               r_uri = target_uri.merge(url_in_css)
               download_resource(r_uri, doc)
             end
